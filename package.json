@@ -1,17 +1,17 @@
 {
   "name": "api-demo",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000a\u0000p\u0000i\u0000-\u0000d\u0000e\u0000m\u0000o\u0000\r\u0000 \u0000",
+  "description": "api test framework POC",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 10000 --recursive"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/barry07/api-demo.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Barry Horgan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/barry07/api-demo/issues"
