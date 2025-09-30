@@ -19,6 +19,7 @@
   "homepage": "https://github.com/barry07/api-demo#readme",
   "devDependencies": {
     "chai": "^6.2.0",
+    "chai-json-schema-ajv": "^5.2.4",
     "mocha": "^11.7.2",
     "supertest": "^7.1.4"
   }
