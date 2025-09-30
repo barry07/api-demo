@@ -1,0 +1,5 @@
+{
+  "validStations": ["9434X", "9430", "9436"],
+  "invalidStation": "XXXX",
+  "missingStationPath": "/weather/aemetstation/lastdata/"
+}
