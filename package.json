@@ -4,7 +4,7 @@
   "description": "api test framework POC",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 10000 --recursive"
+    "test": "mocha --timeout 10000 --recursive --reporter mochawesome"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,9 @@
   "devDependencies": {
     "chai": "^6.2.0",
     "chai-json-schema-ajv": "^5.2.4",
+    "dotenv": "^17.2.3",
     "mocha": "^11.7.2",
+    "mochawesome": "^7.1.4",
     "supertest": "^7.1.4"
-  },
-  "dependencies": {
-    "dotenv": "^17.2.3"
   }
 }
