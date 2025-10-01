@@ -10,7 +10,7 @@ const { expect } = require("chai");
 const BASE_URL = process.env.BASE_URL;
 
 // Define the rest of the fixed API path
-const API_PREFIX = "/v1/weather/aemet/station/";
+const API_PREFIX = "/v1.0/getAemetStation/";
 
 // Check if the BASE_URL was loaded correctly (good practice)
 if (!BASE_URL) {
@@ -24,7 +24,7 @@ describe("ODWeather API — getAemetStation - Endpoint", () => {
   stations.validStations.forEach((stationId) => {
     it(`should return 200 OK for a valid station ID: ${stationId}`, async () => {
       const res = await request(BASE_URL)
-        .get(`${API_PREFIX}${stationId}/lastdata/`)   // ✅ fixed template string
+        .get(`${API_PREFIX}${stationId}/lastdata/`) 
 
       expect(res.status).to.equal(200);
       expect(res.body).to.be.an("object"); // sanity check
