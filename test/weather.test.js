@@ -35,8 +35,16 @@ describe("ODWeather API — getAemetStation - Endpoint", () => {
       const res = await request(BASE_URL)
         .get(`${API_PREFIX}${stationId}/lastdata/`) 
 
-      expect(res.status).to.equal(200);
-      expect(res.body).to.be.an("object"); // sanity check
+      expect(res.status).to.equal(404);
+      expect(res.body).to.be.an("object"); 
+    });
+
+    it(`should return 404 for an missing station ID: ${stationId}`, async () => {
+      const res = await request(BASE_URL)
+        .get(`${API_PREFIX}/lastdata/`) 
+
+      expect(res.status).to.equal(404);
+      expect(res.body).to.be.an("object"); 
     });
   });
 });
