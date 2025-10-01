@@ -1,5 +1,5 @@
 {
-  "validStations": ["9434", "9430", "9436"],
+  "validStations": ["aeropuertopalma", "caboblanco"],
   "invalidStation": "XXXX",
   "missingStationPath": "/weather/aemetstation/lastdata/"
 }

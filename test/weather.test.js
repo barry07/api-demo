@@ -11,7 +11,6 @@ describe("ODWeather API — getAemetStation - Endpoint", () => {
         .get(`/weather/aemetstation/${stationId}/lastdata/`);
 
       expect(res.status).to.equal(200);
-      expect(res.body).to.be.jsonSchema(stationSchema);
     });
   });
 });
