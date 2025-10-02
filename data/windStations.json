@@ -1,0 +1,6 @@
+{
+  "validStations": ["EW013", "EW008"],
+  "invalidStations": ["EW000", "EW001"],
+  "validPeriods": ["latestdata", "latestday", "latesthour"],
+  "invalidPeriods": ["latestminute", "latestsecond", "latesth0ur"]
+}
