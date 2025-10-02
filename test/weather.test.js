@@ -1,7 +1,6 @@
 // load the environment variable from .env file
 require("dotenv").config();
 
-
 const request = require("supertest");
 const { expect } = require("chai");
 
@@ -39,7 +38,7 @@ describe("ODWeather API — getAemetStation - Endpoint", () => {
       expect(res.body).to.be.an("object"); 
     });
 
-    it(`should return 404 for an missing station ID: ${stationId}`, async () => {
+    it(`should return 404 for an missing station ID:`, async () => {
       const res = await request(BASE_URL)
         .get(`${API_PREFIX}/lastdata/`) 
 

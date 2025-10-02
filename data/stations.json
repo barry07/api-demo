@@ -1,5 +1,5 @@
 {
-  "validStations": ["aeropuertopalma", "caboblanco"],
-  "invalidStations": ["shannon", "dublin", "derry"],
+  "validStations": ["aeropuertopalma"],
+  "invalidStations": ["shannon"],
   "missingStationPath": "/weather/aemetstation/lastdata/"
 }
