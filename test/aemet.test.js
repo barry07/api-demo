@@ -10,16 +10,21 @@ const ajv = new Ajv();
 
 describe('Aemet Station API', () => {
   it('should return latest data matching schema', async () => {
+    // Use the correct endpoint
     const responsePromise = request('https://api.oceandrivers.com')
-      .get('/v1.0/getAemetStation/aeropuertopalma/lastdata');
+      .get('/v1.0/getAemetStation/aeropuertopalma/lastdata/'); 
 
+    // Assert HTTP status
     await expect(responsePromise).to.eventually.have.property('status', 200);
 
     const res = await responsePromise;
-    expect(res.body).to.be.an('array');
 
+    // Response is an object containing fields, not an array
+    expect(res.body).to.be.an('object');
+
+    // Validate against schema
     const validate = ajv.compile(aemetSchema);
-    const valid = validate(res.body[0]);
+    const valid = validate(res.body);
 
     if (!valid) {
       console.error('Schema validation errors:', validate.errors);

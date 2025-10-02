@@ -1,8 +1,8 @@
 module.exports = {
   type: "object",
-  required: ["temperature", "humidity", "wind", "pressure"],
+  required: ["temp", "humidity", "wind", "pressure"],
   properties: {
-    temperature: { type: "number" },
+    temp: { type: "number" },
     humidity: { type: "number" },
     wind: {
       type: "object",
