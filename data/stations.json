@@ -1,5 +1,6 @@
 {
   "validStations": ["aeropuertopalma"],
-  "invalidStations": ["shannon"],
-  "missingStationPath": "/weather/aemetstation/lastdata/"
+  "invalidStations": ["shannon", "derry", "nonexistentstation"],
+  "missingStationPath": "/weather/aemetstation/lastdata/",
+  "validBouyStations": ["boyaenderrocat ", "playadepalma"]
 }
