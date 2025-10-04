@@ -11,7 +11,7 @@ if (!BASE_URL) {
 const stations = require("../data/stations.json");
 
 describe('ODWeather API - getSocibWeatherStation - endpoint', function () {
-  this.timeout(10000); // give API time to respond
+  this.timeout(10000); 
 
   stations.validBouyStations.forEach((stationId) => {
     it(`should return 200 response for valid bouy stations ${stationId}`, async () => {
