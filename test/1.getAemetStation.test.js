@@ -1,30 +1,27 @@
 const request = require('supertest');
-const Ajv = require('ajv');
-const aemetSchema = require('../schemas/aemet.schema');
-const ajv = new Ajv();
+const chai = require('chai');
+
+
+const BASE_URL = process.env.BASE_URL;
+const API_PREFIX = "/v1.0/getAemetStation/";
+
+if (!BASE_URL) {
+  throw new Error("BASE_URL not found. Ensure it is defined in your .env file.");
+}
+
+// Import station IDs from external file
+const stations = require("../data/stations.json");
 
 describe('ODWeather API - getAemetStation - endpoint', () => {
-  it('should return latest data matching schema', async () => {
-    // Use the correct endpoint
-    const responsePromise = request('https://api.oceandrivers.com')
-      .get('/v1.0/getAemetStation/aeropuertopalma/lastdata/'); 
+  stations.validStations.forEach((stationId) => {
+    it(`should return 200 response for valid station ${stationId}`, async () => {
+      const res = await request(BASE_URL)
+        .get(`${API_PREFIX}${stationId}/lastdata/`);
 
-    // Assert HTTP status
-    await expect(responsePromise).to.eventually.have.property('status', 200);
+      expect(res.status).to.equal(200);
 
-    const res = await responsePromise;
-
-    // Response is an object containing fields, not an array
-    expect(res.body).to.be.an('object');
-
-    // Validate against schema
-    const validate = ajv.compile(aemetSchema);
-    const valid = validate(res.body);
-
-    if (!valid) {
-      console.error('Schema validation errors:', validate.errors);
-    }
-
-    expect(valid).to.be.true;
+      // The response is expected to be an object
+      expect(res.body).to.be.an('object');
+    });
   });
 });

@@ -1,5 +1,5 @@
 {
-  "validStations": ["aeropuertopalma"],
+  "validStations": ["aeropuertopalma", "caboblanco"],
   "validBouyStations": ["boyaenderrocat ", "playadepalma"],
   "validWindStations": ["EW013", "EW008"],
   "invalidStations": ["shannon", "derry", "nonexistentstation"],
