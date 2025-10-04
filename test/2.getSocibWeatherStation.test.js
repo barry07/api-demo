@@ -1,9 +1,4 @@
 const request = require('supertest');
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
-chai.use(chaiAsPromised);
-const expect = chai.expect;
-require("dotenv").config();
 
 const BASE_URL = process.env.BASE_URL;
 const API_PREFIX = "/v1.0/getSocibWeatherStation/";
@@ -15,7 +10,7 @@ if (!BASE_URL) {
 // Import station IDs from external file
 const stations = require("../data/stations.json");
 
-describe('Get data from the socib bahia de palma buoy', function () {
+describe('ODWeather API - getSocibWeatherStation - endpoint', function () {
   this.timeout(10000); // give API time to respond
 
   stations.validBouyStations.forEach((stationId) => {

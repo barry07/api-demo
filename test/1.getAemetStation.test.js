@@ -1,14 +1,9 @@
 const request = require('supertest');
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
 const Ajv = require('ajv');
 const aemetSchema = require('../schemas/aemet.schema');
-
-chai.use(chaiAsPromised);
-const expect = chai.expect;
 const ajv = new Ajv();
 
-describe('Aemet Station API', () => {
+describe('ODWeather API - getAemetStation - endpoint', () => {
   it('should return latest data matching schema', async () => {
     // Use the correct endpoint
     const responsePromise = request('https://api.oceandrivers.com')

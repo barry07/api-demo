@@ -10,7 +10,7 @@ if (!BASE_URL) {
 // Import station IDs from external file
 const stations = require("../data/stations.json");
 
-describe('Easy Wind API', function () {
+describe('ODWeather API - getEasyWind - endpoint', function () {
   this.timeout(10000); // give API time to respond
 
   stations.validWindStations.forEach((stationId) => {
