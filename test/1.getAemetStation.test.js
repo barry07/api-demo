@@ -14,11 +14,48 @@ const stations = require("../data/stations.json");
 
 describe('ODWeather API - getAemetStation - endpoint', () => {
   stations.validStations.forEach((stationId) => {
-    it(`should return 200 response for valid station ${stationId}`, async () => {
+    it(`should return 200 OK with weather data for valid station ID ${stationId}`, async () => {
       const res = await request(BASE_URL)
         .get(`${API_PREFIX}${stationId}/lastdata/`);
 
       expect(res.status).to.equal(200);
+
+      // The response is expected to be an object
+      expect(res.body).to.be.an('object');
+    });
+  });
+
+
+  stations.invalidStations.forEach((stationId) => {
+    it(`should return 404 error for invalid station ID ${stationId}`, async () => {
+      const res = await request(BASE_URL)
+        .get(`${API_PREFIX}${stationId}/lastdata/`);
+
+      expect(res.status).to.equal(404);
+
+      // The response is expected to be an object
+      expect(res.body).to.be.an('object');
+    });
+  });
+
+  stations.validPeriods.forEach((period) => {
+    it(`should return 200 OK with weather data for valid station ID with valid period ${period}`, async () => {
+      const res = await request(BASE_URL)
+        .get(`${API_PREFIX}aeropuertopalma/${period}}/`);
+
+      expect(res.status).to.equal(200);
+
+      // The response is expected to be an object
+      expect(res.body).to.be.an('object');
+    });
+  });
+
+  stations.invalidPeriods.forEach((period) => {
+    it(`should return 404 error for valid station ID with invalid period ${period}`, async () => {
+      const res = await request(BASE_URL)
+        .get(`${API_PREFIX}aeropuertopalma/${period}}/`);
+
+      expect(res.status).to.equal(404);
 
       // The response is expected to be an object
       expect(res.body).to.be.an('object');
