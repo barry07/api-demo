@@ -13,12 +13,12 @@ if (!BASE_URL) {
 }
 
 // Import station IDs from external file
-const windStations = require("../data/windStations.json");
+const stations = require("../data/stations.json");
 
 describe('Easy Wind API', function () {
   this.timeout(10000); // give API time to respond
 
-  windStations.validStations.forEach((stationId) => {
+  stations.validWindStations.forEach((stationId) => {
     it(`should return 200 response for valid stations ${stationId}`, async () => {
       const responsePromise = request(BASE_URL)
         .get(`${API_PREFIX}${stationId}/?period=latestdata/`);
@@ -32,7 +32,7 @@ describe('Easy Wind API', function () {
     });
 });
 
-    windStations.invalidStations.forEach((stationId) => {
+    stations.invalidStations.forEach((stationId) => {
     it(`should return error for an invalid station ${stationId}`, async () => {
       const responsePromise = request(BASE_URL)
         .get(`${API_PREFIX}${stationId}/?period=latestdata/`);
@@ -47,7 +47,7 @@ describe('Easy Wind API', function () {
     });
   });
 
-windStations.validPeriods.forEach((period) => {
+stations.validPeriods.forEach((period) => {
     it(`should return 200 response for valid periods ${period}`, async () => {
       const responsePromise = request(BASE_URL)
         .get(`${API_PREFIX}EW013/?period=${period}/`);
@@ -61,7 +61,7 @@ windStations.validPeriods.forEach((period) => {
     });
 });
 
-windStations.invalidPeriods.forEach((period) => {
+stations.invalidPeriods.forEach((period) => {
     it(`should return error for invalid periods ${period}`, async () => {
       const responsePromise = request(BASE_URL)
         .get(`${API_PREFIX}EW013/?period=${period}/`);

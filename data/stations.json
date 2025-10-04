@@ -1,6 +1,9 @@
 {
   "validStations": ["aeropuertopalma"],
+  "validBouyStations": ["boyaenderrocat ", "playadepalma"],
+  "validWindStations": ["EW013", "EW008"],
   "invalidStations": ["shannon", "derry", "nonexistentstation"],
   "missingStationPath": "/weather/aemetstation/lastdata/",
-  "validBouyStations": ["boyaenderrocat ", "playadepalma"]
+  "validPeriods": ["latestdata", "latestday", "latesthour"],
+  "invalidPeriods": ["latestminute", "latestsecond", "latesth0ur"]
 }
