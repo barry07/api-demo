@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-10-04T07:13:29.650Z",
-    "end": "2025-10-04T07:13:34.455Z",
-    "duration": 4805,
+    "start": "2025-10-04T07:25:46.208Z",
+    "end": "2025-10-04T07:25:51.304Z",
+    "duration": 5096,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c1e7cc8c-7ee4-49fa-a30c-9797c3d51357",
+      "uuid": "4354ae6a-a10c-4167-acf0-e03797f597ea",
       "title": "",
       "fullFile": "C:\\Users\\Admin\\projects\\api-demo\\test\\1.getAemetStation.test.js",
       "file": "\\test\\1.getAemetStation.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "33bbc9dd-72ec-438d-b675-0f724ce4ece2",
+          "uuid": "48ffe5ed-b784-42be-b6e4-160ae1a8e5f6",
           "title": "ODWeather API - getAemetStation - endpoint",
           "fullFile": "C:\\Users\\Admin\\projects\\api-demo\\test\\1.getAemetStation.test.js",
           "file": "\\test\\1.getAemetStation.test.js",
@@ -38,7 +38,7 @@
               "title": "should return 200 response for valid station aeropuertopalma",
               "fullTitle": "ODWeather API - getAemetStation - endpoint should return 200 response for valid station aeropuertopalma",
               "timedOut": false,
-              "duration": 2036,
+              "duration": 2593,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const res = await request(BASE_URL)\n  .get(`${API_PREFIX}${stationId}/lastdata/`);\nexpect(res.status).to.equal(200);\n// The response is expected to be an object\nexpect(res.body).to.be.an('object');",
               "err": {},
-              "uuid": "e8c9fb92-117e-4c58-bfc0-e7d04ff725f3",
-              "parentUUID": "33bbc9dd-72ec-438d-b675-0f724ce4ece2",
+              "uuid": "c74e4dbe-70a5-4f6e-8741-8db9f3e9e1b4",
+              "parentUUID": "48ffe5ed-b784-42be-b6e4-160ae1a8e5f6",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "should return 200 response for valid station caboblanco",
               "fullTitle": "ODWeather API - getAemetStation - endpoint should return 200 response for valid station caboblanco",
               "timedOut": false,
-              "duration": 2746,
+              "duration": 2486,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -69,22 +69,22 @@
                 "estack": "AssertionError: expected 500 to equal 200\n    at Context.<anonymous> (test\\1.getAemetStation.test.js:21:29)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
                 "diff": "- 500\n+ 200\n"
               },
-              "uuid": "d7f0bd54-5f7a-4081-b12e-3fceaf0c6261",
-              "parentUUID": "33bbc9dd-72ec-438d-b675-0f724ce4ece2",
+              "uuid": "dcf38175-d3f7-4fdf-a476-56108fdb8d03",
+              "parentUUID": "48ffe5ed-b784-42be-b6e4-160ae1a8e5f6",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e8c9fb92-117e-4c58-bfc0-e7d04ff725f3"
+            "c74e4dbe-70a5-4f6e-8741-8db9f3e9e1b4"
           ],
           "failures": [
-            "d7f0bd54-5f7a-4081-b12e-3fceaf0c6261"
+            "dcf38175-d3f7-4fdf-a476-56108fdb8d03"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 4782,
+          "duration": 5079,
           "root": false,
           "rootEmpty": false,
           "_timeout": 10000
