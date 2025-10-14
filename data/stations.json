@@ -1,9 +1,11 @@
 {
   "validStations": ["aeropuertopalma", "caboblanco"],
+  "invalidStations": ["shannon", "derry", "nonexistentstation"],
+  "validStationName": ["cnarenal", "campastilla", "cncg", "cncoloniasp"],
+  "invalidStationName": [""],
   "validBouyStations": ["boyaenderrocat ", "playadepalma"],
   "validWindStations": ["EW013", "EW008"],
-  "invalidStations": ["shannon", "derry", "nonexistentstation"],
-  "missingStationPath": "/weather/aemetstation/lastdata/",
   "validPeriods": ["latestdata", "latestday", "latesthour"],
-  "invalidPeriods": ["latestminute", "latestsecond", "latesth0ur"]
+  "invalidPeriods": ["latestminute", "latestsecond", "latesth0ur"],
+  "missingStationPath": "/weather/aemetstation/lastdata/"
 }

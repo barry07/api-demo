@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/barry07/api-demo#readme",
   "devDependencies": {
+    "ajv": "^8.12.0",
+    "axios": "^1.12.2",
     "chai": "^6.2.0",
+    "chai-as-promised": "^7.1.1",
     "dotenv": "^17.2.3",
     "mocha": "^11.7.2",
     "mochawesome": "^7.1.4",
-    "supertest": "^7.1.4",
-    "ajv": "^8.12.0",
-    "chai-as-promised": "^7.1.1"
+    "supertest": "^7.1.4"
   }
 }

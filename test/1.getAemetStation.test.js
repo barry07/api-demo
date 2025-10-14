@@ -9,7 +9,7 @@ if (!BASE_URL) {
   throw new Error("BASE_URL not found. Ensure it is defined in your .env file.");
 }
 
-// Import station IDs from external file
+// import test data
 const stations = require("../data/stations.json");
 
 describe('ODWeather API - getAemetStation - endpoint', () => {
