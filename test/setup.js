@@ -1,12 +1,9 @@
-// test/setup.js
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
+const chai = require("chai");
+const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
-// Make expect globally available
 global.expect = chai.expect;
 
-
-require('dotenv').config();
+require("dotenv").config();
 const BASE_URL = process.env.BASE_URL?.replace(":443", ""); // strip :443 if present
 
 if (!BASE_URL) {
@@ -19,9 +16,15 @@ const defaultHeaders = {
   "Accept-Language": "en-US,en;q=0.9",
 };
 
+// ✅ Global Mocha hooks
+exports.mochaHooks = {
+  beforeAll(done) {
+    this.timeout(10000); // 10 seconds for all tests
+    done();
+  }
+};
+
 module.exports = {
   BASE_URL,
   defaultHeaders,
 };
-
-

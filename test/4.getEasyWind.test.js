@@ -11,7 +11,6 @@ if (!BASE_URL) {
 const stations = require("../data/stations.json");
 
 describe('ODWeather API - getEasyWind - endpoint', function () {
-  this.timeout(10000); // give API time to respond
 
   stations.validWindStations.forEach((stationId) => {
     it(`should return 200 response for valid stations ${stationId}`, async () => {
