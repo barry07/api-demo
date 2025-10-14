@@ -1,14 +1,8 @@
-const request = require('supertest');
-
-const BASE_URL = process.env.BASE_URL;
-const API_PREFIX = "/v1.0/getEasyWind/";
-
-if (!BASE_URL) {
-  throw new Error("BASE_URL not found. Ensure it is defined in your .env file.");
-}
-
-// Import station IDs from external file
+const request = require("supertest");
+const { BASE_URL, defaultHeaders } = require("./setup");
 const stations = require("../data/stations.json");
+
+const API_PREFIX = "/v1.0/getEasyWind/";
 
 describe('ODWeather API - getEasyWind - endpoint', function () {
 
