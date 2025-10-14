@@ -5,7 +5,7 @@ const stations = require("../data/stations.json");
 const API_PREFIX = "/v1.0/getAemetStation/";
 
 describe("ODWeather API - getAemetStation - endpoint", function () {
-  this.timeout(10000);
+  //this.timeout(10000);
 
   // Valid Stations
   for (const stationId of stations.validStations) {
@@ -13,6 +13,7 @@ describe("ODWeather API - getAemetStation - endpoint", function () {
       const res = await request(BASE_URL)
         .get(`${API_PREFIX}${stationId}/lastdata/`)
         .set(defaultHeaders);
+        console.log((`${BASE_URL}${API_PREFIX}${stationId}/lastdata/`))
 
       expect(res.status).to.equal(200);
       expect(res.body).to.be.an("object");
