@@ -7,7 +7,7 @@ require("dotenv").config();
 const BASE_URL = process.env.BASE_URL?.replace(":443", ""); // strip :443 if present
 
 if (!BASE_URL) {
-  throw new Error("❌ BASE_URL not found in .env");
+  throw new Error("BASE_URL not found in .env");
 }
 
 const defaultHeaders = {
@@ -16,7 +16,7 @@ const defaultHeaders = {
   "Accept-Language": "en-US,en;q=0.9",
 };
 
-// ✅ Global Mocha hooks
+// Global Mocha hooks
 exports.mochaHooks = {
   beforeAll(done) {
     this.timeout(10000); // 10 seconds for all tests
